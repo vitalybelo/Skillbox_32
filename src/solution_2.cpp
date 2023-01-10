@@ -18,6 +18,7 @@ void solution_2()
         data = json::parse(file);
         file.close();
     }
+
     cout << data.dump(4) << endl;
     cout << data["Год"] << endl;
     cout << data["В главных ролях"] << endl;
