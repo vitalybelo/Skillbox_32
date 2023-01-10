@@ -1,12 +1,16 @@
 #include <iostream>
-#include "nlohmann/json.hpp"
-
+#include "solutions.h"
 using namespace std;
-using json = nlohmann::json;
-
 
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    /**
+     * записываем информацию о фильме в формате Json в текстовый файл
+     */
+    solution_1();
+
+    solution_2();
+
     return 0;
 }
