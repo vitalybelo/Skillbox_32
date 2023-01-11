@@ -41,7 +41,7 @@ void solution_1()
         file << movie_get_shorty.dump(4) << endl;
         file.flush();
         file.close();
-        cout << "JSON file successfully created in directory CMAKE_SOURCE_DIR\\DATA\n";
+        cout << "JSON file successfully created in CMAKE_SOURCE_DIR\\DATA\n";
     } else {
         cerr << "ERROR WRITING JSON FILE\n";
     };
