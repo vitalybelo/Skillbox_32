@@ -29,9 +29,8 @@ void solution_2() {
     if (data == nullptr) return;
 
     cout << "Загружена информация о фильмах:\n\n";
-    for (int i = 0; i < data.size(); i++) {
+    for (int i = 0; i < data.size(); i++)
         cout << "\t № " << i + 1 << " :: " << data[i]["Название"] << " :: (" << data[i]["Премьера"] << ")\n";
-    }
 
     string comm;
     do {
