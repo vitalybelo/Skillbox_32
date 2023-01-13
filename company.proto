@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+message Company
+{
+  required string name = 1;
+  required string legalAddress = 2;
+  required int32 foundationYear = 3;
+  optional string occupation = 4;
+  optional bool externalEconomic = 5;
+  optional int32 rating = 6;
+}
+
+// форма запуска компилятора: bin\protoc.exe company.proto --cpp_out=.

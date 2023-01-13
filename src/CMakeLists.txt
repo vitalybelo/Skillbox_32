@@ -6,7 +6,6 @@ add_executable(
         use_lib.cpp
         solution_1.cpp
         solution_2.cpp
-        solution_3.cpp
 )
 
 target_include_directories(Skillbox_32 PUBLIC ${INCLUDE_DIR})
