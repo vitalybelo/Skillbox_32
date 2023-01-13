@@ -1,20 +1,23 @@
 #include "use_lib.h"
+#include <algorithm>
+#include <cctype>
 #include <iostream>
+#include <string>
 #include <sstream>
 #include <random>
-#include <algorithm>
 #include "windows.h"
 
+void to_lower(std::string& s) {
+    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+}
 std::string getCommand() {
     std::string command;
     getline(std::cin,command);
-    for (char & i : command) {
-        i = (char) tolower(i);
-    }
+    to_lower(command);
     return command;
 }
 
-void clearStdin () {
+void clearStdin() {
     std::cin.clear();
     fflush(stdin);
 }
@@ -22,13 +25,19 @@ void setlocaleRus () {
     setlocale(LC_ALL, "Russian");
 }
 
-void setlocale1251 () {
-    setlocaleRus();
+void setlocaleUTF8() {
+    setlocale(LC_ALL,"Russia.Russian.UTF8");
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+}
+
+void setlocale1251() {
+    setlocale(LC_ALL,"Russia.Russian.1251");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 }
 
-int irandom_next (int from, int to) {
+int irandom_next(int from, int to) {
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -38,7 +47,7 @@ int irandom_next (int from, int to) {
     //return (int)gen();
 }
 
-tm get_TMDate (std::string date_string) {
+tm get_TMDate(std::string date_string) {
     time_t t = time(nullptr);
     tm now = *localtime(&t);
     replace(date_string.begin(), date_string.end(), '/', ' ');
